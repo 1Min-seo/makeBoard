@@ -1,5 +1,8 @@
 package com.care.board.repository;
 
-public class MemberRepository {
+import org.springframework.stereotype.Repository;
 
+@Repository
+public class MemberRepository {
+	
 }
