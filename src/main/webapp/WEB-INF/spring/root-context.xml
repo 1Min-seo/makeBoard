@@ -27,5 +27,9 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
     </bean>
 	
+	<!-- scan -->
+    <context:component-scan base-package="com.care.board.service"></context:component-scan>
+    <context:component-scan base-package="com.care.board.dao"></context:component-scan>
+    <context:component-scan base-package="com.care.board.vo"></context:component-scan>
 	
 </beans>
