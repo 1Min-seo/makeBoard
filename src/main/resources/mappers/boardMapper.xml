@@ -15,5 +15,15 @@
 	                 		  , #{writer}  )
    
    </insert>
+   
+   <!-- 게시글 목록 보기 -->
+   <select id="list" resultType="com.care.board.vo.BoardVO">
+   		SELECT BNO
+   			, TITLE
+   			, WRITER
+   			, REGDATE
+   		FROM BOARD
+   		ORDER BY BNO DESC
+   </select>
 </mapper>
 	
