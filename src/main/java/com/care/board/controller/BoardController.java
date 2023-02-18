@@ -35,12 +35,12 @@ public class BoardController {
 	}
 	
 	//게시판 목록 조회
-	@GetMapping("/list")
+	@GetMapping("/board/list")
 	public String list(Model model) throws Exception{
 		logger.info("list");
 		
 		model.addAttribute("list", service.list());
 		
-		return "board/list";
+		return "/board/list";
 	}
 }
