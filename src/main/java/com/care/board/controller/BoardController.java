@@ -51,4 +51,23 @@ public class BoardController {
 		
 		return "board/readView";
 	}
+	
+	//게시판 수정 뷰
+	@GetMapping("/board/updateView")
+	public String update(BoardVO boardVO, Model model)throws Exception{
+		logger.info("updateView");
+		model.addAttribute("update", service.read(boardVO.getBno()));
+		return "/board/updateView";
+	}
+	
+	//게시판 수정
+	@PostMapping("/board/update")
+	public String update(BoardVO boardVO)throws Exception{
+		logger.info("update");
+		service.update(boardVO);
+		
+		return "redirect:/board/list";
+	}
+	
+	
 }

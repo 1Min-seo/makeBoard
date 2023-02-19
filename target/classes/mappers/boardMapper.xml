@@ -37,5 +37,19 @@
    		WHERE BNO = #{bno}
    </select>
    
+   <!-- 게시글 수정하기 -->
+   <update id="update" parameterType="int">
+   		UPDATE BOARD
+   			SET TITLE=#{title},
+   			SET CONTENT=#{content}
+   		WHERE BNO= #{bno} 
+   </update>
+   
+   <!-- 게시글 삭제하기 -->
+   <delete id="delete" parameterType="int">
+   		DELETE 
+   			FROM BOARD
+   		WHERE BNO=#{bno}
+   </delete>
 </mapper>
 	
