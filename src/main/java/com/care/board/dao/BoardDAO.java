@@ -11,4 +11,7 @@ public interface BoardDAO {
 	
 	//게시글 목록 조회
 	public List<BoardVO> list() throws Exception;
+	
+	//게시글 조회
+	public BoardVO read(int bno) throws Exception;
 }

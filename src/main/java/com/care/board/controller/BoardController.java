@@ -38,9 +38,17 @@ public class BoardController {
 	@GetMapping("/board/list")
 	public String list(Model model) throws Exception{
 		logger.info("list");
-		
 		model.addAttribute("list", service.list());
 		
 		return "/board/list";
+	}
+	
+	//게시판 조회
+	@GetMapping("/board/readView")
+	public String read(BoardVO boardVO, Model model)throws Exception{
+		logger.info("readView");
+		model.addAttribute("read",service.read(boardVO.getBno()));
+		
+		return "board/readView";
 	}
 }
