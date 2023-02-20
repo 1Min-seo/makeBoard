@@ -14,31 +14,32 @@ public class BoardServiceImpl implements BoardService{
 	@Autowired
 	private BoardDAO dao;
 	
-	//°Ô½Ã±Û ÀÛ¼º
+	//ê²Œì‹œê¸€ ì‘ì„±
 	@Override
 	public void write(BoardVO boardVO)throws Exception{
 		dao.write(boardVO);
 	}
 	
-	//°Ô½Ã¹° ¸ñ·Ï Á¶È¸
+	//ê²Œì‹œê¸€ ëª©ë¡ ì¡°íšŒ
 	@Override
 	public List<BoardVO> list()throws Exception{
 		return dao.list();
 	}
 	
-	//°Ô½Ã±Û Á¶È¸
+	//ê²Œì‹œê¸€ ì¡°íšŒ
 	@Override
 	public BoardVO read(int bno)throws Exception{
 		return dao.read(bno);
 	}
 	
-	//°Ô½Ã±Û ¼öÁ¤
+	//ê²Œì‹œê¸€ ìˆ˜ì •
 	@Override
 	public void update(BoardVO boardVO)throws Exception{
 		dao.update(boardVO);
 	}
 	
-	//°Ô½Ã±Û »èÁ¦
+	//ê²Œì‹œê¸€ ì‚­ì œ
+	@Override
 	public void delete(int bno)throws Exception{
 		dao.delete(bno);
 	}

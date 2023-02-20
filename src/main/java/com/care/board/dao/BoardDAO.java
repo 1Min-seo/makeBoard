@@ -6,18 +6,18 @@ import com.care.board.vo.BoardVO;
 
 public interface BoardDAO {
 	
-	//°Ô½Ã±Û ÀÛ¼º
+	//ê²Œì‹œê¸€ ì‘ì„±
 	public void write(BoardVO boardVO) throws Exception;
 	
-	//°Ô½Ã±Û ¸ñ·Ï Á¶È¸
+	//ê²Œì‹œê¸€ ëª©ë¡ ì¡°íšŒ
 	public List<BoardVO> list() throws Exception;
 
-	//°Ô½Ã±Û Á¶È¸
+	//ê²Œì‹œê¸€ ì¡°íšŒ
 	public BoardVO read(int bno) throws Exception;
 	
-	//°Ô½Ã±Û ¼öÁ¤
+	//ê²Œì‹œê¸€ ìˆ˜ì •
 	public void update(BoardVO boardVO)throws Exception;
 	
-	//°Ô½Ã±Û »èÁ¦
+	//ê²Œì‹œê¸€ ì‚­ì œ
 	public void delete(int bno)throws Exception;
 }

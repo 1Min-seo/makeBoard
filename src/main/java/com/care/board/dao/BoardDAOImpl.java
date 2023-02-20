@@ -14,33 +14,33 @@ public  class BoardDAOImpl implements BoardDAO{
 	@Autowired
 	private SqlSession sqlSession;
 	
-	//°Ô½Ã±Û ÀÛ¼º
+	//ê²Œì‹œê¸€ ì‘ì„±
 	@Override
 	public void write(BoardVO boardVO) throws Exception {
 		sqlSession.insert("boardMapper.insert",boardVO);
 		
 	}
 	
-	//°Ô½Ã¹° ¸ñ·Ï Á¶È¸
+	//ê²Œì‹œê¸€ ëª©ë¡ ì¡°íšŒ
 	@Override
 	public List<BoardVO> list() throws Exception{
 		return sqlSession.selectList("boardMapper.list");
 		
 	}
 	
-	//°Ô½Ã¹° Á¶È¸
+	//ê²Œì‹œê¸€ ì¡°íšŒ
 	@Override
 	public BoardVO read(int bno) throws Exception{
 		return sqlSession.selectOne("boardMapper.read", bno);
 	}
 	
-	//°Ô½Ã±Û ¼öÁ¤
+	//ê²Œì‹œê¸€ ìˆ˜ì •
 	@Override
 	public void update(BoardVO boardVO) throws Exception{
 		sqlSession.update("boardMapper.update",boardVO);
 	}
 	
-	//°Ô½Ã±Û »èÁ¦
+	//ê²Œì‹œê¸€ ì‚­ì œ
 	@Override
 	public void delete(int bno)throws Exception{
 		sqlSession.delete("boardMapper.delete",bno);

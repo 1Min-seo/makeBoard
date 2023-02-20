@@ -19,7 +19,7 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
-	//°Ô½ÃÆÇ ±Û ÀÛ¼º
+	//ê²Œì‹œíŒ ê¸€ ì‘ì„±
 	@GetMapping("/board/writeView")
 	public String writeView() throws Exception{
 		logger.info("writeView");
@@ -34,7 +34,7 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	//°Ô½ÃÆÇ ¸ñ·Ï Á¶È¸
+	//ê²Œì‹œíŒ ëª©ë¡ ì¡°íšŒ
 	@GetMapping("/board/list")
 	public String list(Model model) throws Exception{
 		logger.info("list");
@@ -43,7 +43,7 @@ public class BoardController {
 		return "/board/list";
 	}
 	
-	//°Ô½ÃÆÇ Á¶È¸
+	//ê²Œì‹œíŒ ì¡°íšŒ
 	@GetMapping("/board/readView")
 	public String read(BoardVO boardVO, Model model)throws Exception{
 		logger.info("readView");
@@ -52,19 +52,29 @@ public class BoardController {
 		return "board/readView";
 	}
 	
-	//°Ô½ÃÆÇ ¼öÁ¤ ºä
+	//ê²Œì‹œíŒ ìˆ˜ì • ë·°
 	@GetMapping("/board/updateView")
-	public String update(BoardVO boardVO, Model model)throws Exception{
+	public String updateView(BoardVO boardVO, Model model)throws Exception{
 		logger.info("updateView");
 		model.addAttribute("update", service.read(boardVO.getBno()));
+		
 		return "/board/updateView";
 	}
 	
-	//°Ô½ÃÆÇ ¼öÁ¤
+	//ê²Œì‹œíŒ ìˆ˜ì •
 	@PostMapping("/board/update")
 	public String update(BoardVO boardVO)throws Exception{
 		logger.info("update");
 		service.update(boardVO);
+		
+		return "redirect:/board/list";
+	}
+	
+	//ê²Œì‹œíŒ ì‚­ì œ
+	@PostMapping("/board/delete")
+	public String delete(BoardVO boardVO)throws Exception{
+		logger.info("delete");
+		service.delete(boardVO.getBno());
 		
 		return "redirect:/board/list";
 	}
