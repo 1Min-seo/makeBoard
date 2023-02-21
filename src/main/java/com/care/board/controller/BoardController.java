@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.care.board.service.BoardService;
 import com.care.board.vo.BoardVO;
+import com.care.board.vo.Criteria;
+import com.care.board.vo.PageMaker;
 
 @Controller
 public class BoardController {
@@ -36,9 +38,15 @@ public class BoardController {
 	
 	//게시판 목록 조회
 	@GetMapping("/board/list")
-	public String list(Model model) throws Exception{
+	public String list(Model model, Criteria cri) throws Exception{
 		logger.info("list");
-		model.addAttribute("list", service.list());
+		model.addAttribute("list", service.list(cri));
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listCount());
+		
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "/board/list";
 	}
