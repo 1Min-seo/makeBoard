@@ -42,7 +42,6 @@ public class BoardVO {
 	}
 	public void write(BoardVO boardVO) {
 		
-		
 	}
 	
 	
